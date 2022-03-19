@@ -1,0 +1,25 @@
+div{
+    text-align: center;
+}
+
+h2{
+    text-transform:uppercase;
+}
+
+#prikaz-div{
+    border: 2px solid black;
+    width: 30%;
+    margin:auto;
+}
+
+label{
+    display:inline-block;
+    width: 110px;
+    text-align: right;
+}
+
+input{
+    margin:10px;
+    width: 120px;
+    padding:5px;
+}

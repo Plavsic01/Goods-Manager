@@ -1,0 +1,35 @@
+{% extends "template.html" %}
+{% block title %}Pocetna Strana{% endblock %}
+{% block link %}
+    {{ super() }}
+    <link rel="stylesheet" href="/static/form.css">
+{% endblock %}
+
+{% block body %}
+    <form action="{{ url_for('izmeni',id=id) }}" method="POST">
+        <div>
+            <label for="id">ID:</label>
+            <input type="number" name="id" id="id" value="{{ proizvod['id']}}" readonly>
+        </div>
+        <div>
+            <label for="naziv">Naziv:</label>
+            <input type="text" name="naziv" id="naziv" value="{{ proizvod['naziv']}}">
+        </div>
+        <div>
+            <label for="proizvodjac">Proizvodjac</label>
+            <input type="text" name="proizvodjac" id="proizvodjac" value="{{ proizvod['proizvodjac']}}">
+        </div>
+        <div>
+            <label for="cena">Cena:</label>
+            <input type="number" name="cena" id="cena" value="{{ proizvod['cena']}}">
+        </div>
+        <div>
+            <button type="submit">Izmeni</button>
+        </div>
+
+    </form>
+{% endblock %}
+
+
+
+

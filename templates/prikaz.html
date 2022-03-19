@@ -1,0 +1,31 @@
+{% extends "template.html" %}
+{% block title %}Prikaz{% endblock %}
+{% block link %}
+    {{ super() }}
+    <link rel="stylesheet" href="/static/prikaz.css">
+{% endblock %}
+{% block body %}
+
+    <div>
+        <h2>Prikaz Pojedinacnog Proizvoda</h2>
+    </div>
+
+    <div id="prikaz-div">
+        <div>
+            <label for="id">ID:</label>
+            <input type="number" name="id" id="id" value="{{ proizvod['id']}}" readonly>
+        </div>
+        <div>
+            <label for="naziv">Naziv:</label>
+            <input type="text" name="naziv" id="naziv" value="{{ proizvod['naziv']}}" readonly>
+        </div>
+        <div>
+            <label for="proizvodjac">Proizvodjac</label>
+            <input type="text" name="proizvodjac" id="proizvodjac" value="{{ proizvod['proizvodjac']}}" readonly>
+        </div>
+        <div>
+            <label for="cena">Cena:</label>
+            <input type="text" name="cena" id="cena" value="{{ proizvod['cena']}}" readonly>
+        </div>
+    </div>
+{% endblock %}

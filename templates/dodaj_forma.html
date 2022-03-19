@@ -1,0 +1,43 @@
+{% extends "template.html" %}
+{% block title %}Dodaj Robu{% endblock %}
+{% block link %}
+    {{ super() }}
+    <link rel="stylesheet" href="/static/form.css">
+{% endblock %}
+
+{% block body %}
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+        <h2 style="background-color: gray;padding:4px">{{ message }}</h2>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('dodaj_robu') }}" method="POST">
+        <div>
+            <label for="id">ID:</label>
+            <input type="number" name="id" id="id" min="1" required>
+        </div>
+        <div>
+            <label for="naziv">Naziv:</label>
+            <input type="text" name="naziv" id="naziv"required>
+        </div>
+        <div>
+            <label for="proizvodjac">Proizvodjac</label>
+            <input type="text" name="proizvodjac" id="proizvodjac"required>
+        </div>
+        <div>
+            <label for="cena">Cena:</label>
+            <input type="number" name="cena" id="cena"required>
+        </div>
+        <div>
+            <button type="submit">Dodaj</button>
+        </div>
+    </form>
+{% endblock %}
+
+
+
+
